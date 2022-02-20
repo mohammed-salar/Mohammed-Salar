@@ -1,0 +1,495 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>Book Store</title>
+	<link rel="stylesheet" type="text/css" href="contact.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"  crossorigin="anonymous">
+
+        
+        <style>
+            body, html {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+  /* The image used */
+  background-image: url("images/book3.jpg");
+
+  min-height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+            *
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family:'Poppins',sans-serif;
+}
+.contact
+{
+position: relative;
+min-height: 100vh;
+padding:50px 100px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+background-image: url("images/book3.jpg");
+background-size:cover;
+
+}
+.content
+{
+}
+
+.contact .content
+{
+	max-width: 800px;
+	text-align: center;
+
+}
+.contact .content h2
+{
+	font-size: 36px;
+	font-weight: 500;
+	color:#fff;
+}
+.contact .content p
+{
+	font-weight: 300;
+	color:#fff;
+}
+.contoner
+{
+	width:100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+}
+.contoner .contactInfo
+{
+	width:50%;
+	display: flex;
+	flex-direction:column;
+}	
+.contoner .contactInfo .box
+{
+	position: relative;
+	padding: 20px 0;
+	display: flex;
+
+}
+.contoner .contactInfo .box .icon
+{
+	min-width: 60px;
+	height: 60px;
+	background: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	font-size:22px;
+}
+.contoner .contactInfo .box .text
+{
+	display: flex;
+	margin-left: 20px;
+	font-size: 16px;
+	color:solid black;
+	flex-direction:column;
+	font-weight:300;
+}
+.contoner .contactInfo .box .text h3
+{
+	font-weight: 500;
+	color:#00bcd4;
+
+}
+.contactForm
+{
+        
+	width:35%;
+	padding: 40px;
+	color:#fff;
+	background:white;
+        height:100%;
+        
+}
+.contactForm h2
+{
+	font-size:30px;
+	color:#333;
+	font-weight: 500;
+}
+.contactForm .inputBox
+{
+	position: relative;
+	width: 100%;
+	margin-top:10px;
+        
+}
+.contactForm .inputBox input,
+.contactForm .inputBox textarea
+{
+	width: 100%;
+	padding: 5px 0;
+	font-size: 16px;
+	margin: 10px 0;
+	border: none;
+	border-bottom:2px solid #333;
+	outline: none;
+	resize: none;
+}   
+.contactForm .inputBox span
+{
+	position: absolute;
+	left: 0;
+	padding: 5px 0;
+	font-size: 24px;
+	margin: 5px 5px;
+	pointer-events: none;
+	transition: 0.5s;
+	color: red;
+
+}  
+.contactForm .inputBox input:focus ~ span,
+.contactForm .inputBox input:valid ~ span
+.contactForm .inputBox textarea:focus ~ span,
+.contactForm .inputBox textarea:valid ~ span
+
+{
+	color:#e91e63;
+	font-size:18px;
+	transform:translateY(-20px);
+}
+.contactForm .inputBox input[type="submit"]
+{
+	width:100px;
+	background: #00bcd4;
+	color:#fff;
+	border: none;
+	cursor: pointer;
+	padding: 10px;
+	font-size:18px;
+}
+
+@media (max-width: 991px)
+{
+	.contact
+	{
+		padding: 50px;
+
+	}
+	.contoner
+	{
+		flex-direction: column;
+	}
+	.contoner .contactInfo
+	{
+		margin-bottom: 40px;
+	}
+	.contoner .contactInfo,
+	.contactForm
+	{
+		width: 100%;
+	}
+}
+.error
+{
+    color:red;
+   
+}
+.name
+{
+    color:blue;
+    background: pink;
+    font-size: 22px;
+}
+
+        </style>
+        
+        <script>
+            
+            function validation()
+            {
+                //name validation
+                var nm,s1,flag=true,regex;
+                nm=document.getElementById("name").value;
+                s1=document.getElementById("s1");
+                regex=/^[a-zA-Z]+$/;
+
+                
+                //name length shoud not be null
+                if(nm.length=="")
+                {
+                s1.innerHTML="Name cannot be null";
+                flag=false;  
+                }
+      
+                //name shoud have only a-z or A-Z
+                else if(!regex.test(nm))
+                {
+                s1.innerHTML="Enter only character"; 
+                flag=false;
+                } 
+                
+                //name length should be greater than 2 char
+                else if(!(nm.length>=2))
+                {
+                 s1.innerHTML="Name must have atleast two charcter";
+                 flag=false;
+                }
+                
+                //name length should be less than 20 char
+                else if(!(nm.length<20))
+                {
+                s1.innerHTML="Name must not be greater than 20 character";
+                flag=false;
+                }
+                
+                //email validation email can't be blank 
+                var email,s2;
+                email=document.getElementById("email").value;
+                s2=document.getElementById("s2");
+                regex=/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+
+                if(email.length=="")
+                {
+                s2.innerHTML="Email_ID can not be blank";
+                flag=false;
+                }
+                
+                else if(!regex.test(email))
+                {
+                s2.innerHTML="Invlaid Email_Id";
+                flag=false;
+                }
+                
+                //matching password validation 
+                 var pwd,cpwd,s3,s4;
+                pwd=document.getElementById("pwd").value;
+                s3=document.getElementById("s3");
+                cpwd=document.getElementById("cpwd").value;
+                s4=document.getElementById("s4");
+                if(pwd.length=="")
+                {
+                s3.innerHTML="Password Can not be blank";
+                flag=false;
+                }
+                
+                if(cpwd.length=="")
+                {  
+                s4.innerHTML="Confirm password cant be blank";
+                flag=false;
+                }
+                //matching both password
+                if(cpwd!==pwd)
+                {
+                s4.innerHTML="Confirm password does not match";
+                flag=false;
+                }
+                
+                //mobile number validation 
+                var mno,s5,t;
+                mno=document.getElementById("mno").value;
+                s5=document.getElementById("s5");
+                t=mno.charCodeAt(0);
+
+                if(mno.length=="")
+                {
+                s5.innerHTML="Mobile Number Can't be blank";
+                flag=false;
+                }  
+                else if(mno.length!=10)
+                {
+                s5.innerHTML="Enter 10 digit Mobile Number.";  
+                flag=false;
+                }
+                //NaN - not a number
+                else if(isNaN(mno))
+                 {
+                 s5.innerHTML="Enter only Numbers."; 
+                 flag=false;
+                 }
+                 //convert char to ascii
+                 else if(!(t==54 || t==55 || t==56 || t==57))
+                 {
+                 s5.innerHTML="mno. start with 6/7/8/9"; 
+                 flag=false;
+                 }
+                
+ 
+               
+                 
+            return flag;
+            }
+            
+                //chkname function is only for onkeyup event  
+            function chkname()
+            {
+                var nm,s1,regex;
+                nm=document.getElementById("name").value;
+                s1=document.getElementById("s1");       
+                regex=/^[a-zA-Z]+$/;
+                if(!regex.test(nm))
+                    {
+                s1.innerHTML="Enter only character";  
+                }
+                else if(!(nm.length>2))
+                {
+                s1.innerHTML="Name must have atleast two character";
+                }
+                else if(!(nm.length<20))
+                {
+                s1.innerHTML="Name must not be greater than 20 character";
+                }
+                else
+                {
+                s1.innerHTML="";
+                }
+            }
+            
+        
+                //chkmail function is only for onkeyup event
+            function chkmail()
+            {
+                var email,s2,regex;
+                email=document.getElementById("email").value;
+                s2=document.getElementById("s2");
+                regex=/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+                if(!regex.test(email))
+                {
+                s2.innerHTML="Invlaid Email_Id";
+                }
+                else
+                {
+                 s2.innerHTML="";
+                }
+            }
+    
+    
+             function matchpwd()
+            {
+                var pwd,cpwd,s3,s4;               
+                pwd=document.getElementById("pwd").value;
+                cpwd=document.getElementById("cpwd").value;
+                s4=document.getElementById("s4");  
+                if(cpwd!==pwd)
+                {
+                s4.innerHTML="Confirm password does not match";
+                s4.style.color="red";
+                }
+            
+                else
+                {
+                s4.innerHTML="";
+                }
+            }        
+
+                //mobile number validation
+            function chkmno()
+            {
+                var mno,s5,t;
+                mno=document.getElementById("mno").value;
+                s5=document.getElementById("s5");
+ 
+             //convert char to ascii
+                t=mno.charCodeAt(0);
+                //alert(t);
+
+                //NaN - not a number
+                if(isNaN(mno))
+                {
+                s5.innerHTML="Enter only Numbers.";  
+                }
+ 
+                else if(!(t==54 || t==55 || t==56 || t==57))
+                {
+                s5.innerHTML="mno. start with 6/7/8/9";  
+                }
+                else if(mno.length!=10)
+                {
+                s5.innerHTML="Enter 10 digit Mobile Number.";  
+                }
+                else
+                {
+                    document.getElementById("s5").innerHTML="";    
+                }
+
+            }
+        
+ 
+   
+      
+            </script>
+        
+    
+</head>
+<body bgcolor="white">
+<section class="contact">
+    <div class="content">
+		<h2><b>Register Here</b></h2>
+	</div>	
+	
+		<div class="contactForm">
+                    <form action="Register" method="post">
+				<h2>Fill Details to Register</h2>
+				<div class="inputBox">
+                                    <label class="name">Name</label>                            
+                                    <input type="text" name="name" id="name" placeholder="Enter Your Name Here"   onkeyup="return chkname()"><br>
+                                   
+                                    <span id="s1" class="error" style="margin-left:25%;"></span>
+                                </div><br>
+
+                                    
+                                    
+				
+				<div class="inputBox">
+                                    <label class="name">Email_Id</label>                                   
+                                    <input type="text" name="mail" id="email" placeholder="Enter Your  Email Here"   onkeyup="chkmail()"><br>
+                                    
+                                    <span id="s2" class="error" style="margin-left:25%;"></span>
+                                </div><br>
+                                
+                                
+				<div class="inputBox">
+                                    <label class="name">Password</label>                                   
+                                    <input type="password" name="psswd" id="pwd" placeholder="Enter Your Password Here"><br>
+                                    <span id="s3" class="error" style="margin-left:25%;"></span><br>
+                                    </div>
+                                     
+                                    
+				<div class="inputBox">
+                                    <label class="name">Confirm_Password</label>                                   
+                                    <input type="password" name="user_confirm_password" id="cpwd" placeholder="enter your confirm password here" onkeyup="matchpwd()"><br>
+                                    <span id="s4" class="error" style="margin-left:25%;"></span><br>
+                                </div>
+                               
+                               
+				<div class="inputBox">
+                                    <label class="name">Mobile_Number</label>                                   
+                                    <input type="text" name="mob" id="mno" placeholder="Enter Your Name Here" onkeyup="chkmno()"><br>
+                                    <span id="s5" class="error" style="margin-left:25%;"></span><br>
+                                </div>
+				<div class="inputBox">
+                                    <input type="submit" value="Register" onclick="return validation()">
+				</div>
+			</form>
+		</div>	
+	
+</section>
+</body>
+</html>

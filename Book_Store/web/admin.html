@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <title>Book Store</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body, html {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+  /* The image used */
+  background-image: url("images/book3.jpg");
+
+  min-height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.container {
+  position: absolute;
+  left: 520;
+  margin: 0px;
+  max-width: 500px;
+  padding: 20px;
+  background-color: invisible;
+}
+input[type=email], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=email]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+.btn {
+  background-color:blue;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover 
+{
+  opacity: 1;
+}
+        </style>
+    </head>
+    <body class="bg-img">
+        <form action="adminlogin" style="color: black" method="post" class="container">
+            
+            <table align="center">
+                <caption><h1 align="center" style="color : blueviolet">Admin Login</h1></caption>
+                <tr>
+                    <td style="color : blueviolet">Email</td>
+                    <td><input type="email" name="mail" placeholder="Enter Email"></td>
+                </tr>
+                <tr>
+                    <td style="color : blueviolet">Password</td>
+                    <td><input type="password" name="psswd" placeholder="Enter Password"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center"><input type="submit" value="Login" class="btn"></td>
+                </tr>
+            </table>
+        </form>
+       
+    </body>
+</html>
